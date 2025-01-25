@@ -1,31 +1,19 @@
 from flask import Flask, render_template, request
-from dotenv import load_dotenv
-import os
-
-# Load environment variables from the .env file
-load_dotenv()
 
 app = Flask(__name__)
-
-departure_city = ""
-city = ""
-start_date = ""
-end_date = ""
-activities = ""
-budget = ""
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        # Get form data
-        departure_city = request.form['departure_city']
-        city = request.form['city']
-        start_date = request.form['start_date']
-        end_date = request.form['end_date']
-        activities = request.form['activities']
-        budget = request.form['budget']
+        # Get form data directly from the request object
+        departure_city = request.form.get('departure_city', '')
+        city = request.form.get('city', '')
+        start_date = request.form.get('start_date', '')
+        end_date = request.form.get('end_date', '')
+        activities = request.form.get('activities', '')
+        budget = request.form.get('budget', '')
 
-        print(type(departure_city))
+        print(type(departure_city))  # Debugging: Check data types
         print(type(start_date))
         print(type(city))
         print(type(end_date))
@@ -42,15 +30,18 @@ def index():
         currency_details = "1 USD = 10 local currency units."
 
         # Pass the data to result.html
-        return render_template('result.html', 
-                               flight_details=flight_details,
-                               hotel_details=hotel_details,
-                               transportation_details=transportation_details,
-                               local_experience_details=local_experience_details,
-                               visa_requirements=visa_requirements,
-                               weather_details=weather_details,
-                               currency_details=currency_details)
+        return render_template(
+            'result.html',
+            flight_details=flight_details,
+            hotel_details=hotel_details,
+            transportation_details=transportation_details,
+            local_experience_details=local_experience_details,
+            visa_requirements=visa_requirements,
+            weather_details=weather_details,
+            currency_details=currency_details
+        )
 
+    # Render the index.html template for GET requests
     return render_template('index.html')
 
 if __name__ == '__main__':
