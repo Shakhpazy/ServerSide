@@ -45,10 +45,10 @@
         bottom: 10px;
     }
     50% {
-        transform: translate(50%, -55%) rotate(0deg);
+        transform: translate(50%, -70%) rotate(0deg);
     }
     75% {
-        transform: translate(75%, -15%) rotate(15deg);
+        transform: translate(75%, -40%) rotate(15deg);
     }
     90% {
         transform: translate(78%, -1%) rotate(15deg);
