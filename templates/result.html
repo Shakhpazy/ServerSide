@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner - Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles2.css') }}" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+
+    <div class="container mt-5 justify-content-center">
+        <h1 class="text-center mb-4">Your Travel Plan</h1>
+
+        <!-- Airplane Animation -->
+        <div class="animation-container">
+            <div class="landing-strip"></div>
+            <div class="destination-strip"></div>
+            <div class="plane"></div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+        <div class="container w-50">
+            <!-- Result Section -->
+            <div class="result-card">
+                <h3>Flight Details:</h3>
+                <p>{{ flight_details }}</p>
+            </div>
+    
+            <div class="result-card">
+                <h3>Hotel Details:</h3>
+                <p>{{ hotel_details }}</p>
+            </div>
+    
+            <div class="result-card">
+                <h3>Transportation Details:</h3>
+                <p>{{ transportation_details }}</p>
+            </div>
+    
+            <div class="result-card">
+                <h3>Local Experiences:</h3>
+                <p>{{ local_experience_details }}</p>
+            </div>
+    
+            <div class="result-card">
+                <h3>Weather Forecast:</h3>
+                <p>{{ weather_details }}</p>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="container d-flex justify-content-center mb-5">
+        <a class="btn btn-dark w-25" href="/">Plan A Different Trip</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

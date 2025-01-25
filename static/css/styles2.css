@@ -1,0 +1,86 @@
+/* Airplane Animation Styling */
+.animation-container {
+    position: relative;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.landing-strip {
+    position: absolute;
+    width: 120px;
+    height: 10px;
+    background-color: #2f2f2f;
+    bottom: 20px;
+    left: 5%;
+    border-radius: 5px;
+}
+
+.destination-strip {
+    position: absolute;
+    width: 120px;
+    height: 10px;
+    background-color: #2f2f2f;
+    bottom: 20px;
+    right: 5%;
+    border-radius: 5px;
+}
+
+.plane {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-image: url('/static/images/plane.png');
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: fly-across 5s ease-in-out infinite;
+}
+
+@keyframes fly-across {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        left: 5%;   
+        bottom: 10px;
+    }
+    50% {
+        transform: translate(50%, -55%) rotate(0deg);
+    }
+    75% {
+        transform: translate(75%, -15%) rotate(15deg);
+    }
+    90% {
+        transform: translate(78%, -1%) rotate(15deg);
+    }
+    100% {
+        transform: translate(100%, 0) rotate(15deg);
+        left: 80%;
+        bottom: 0px;
+    }
+}
+
+.result-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.result-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.result-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.result-card .highlight {
+    font-weight: bold;
+    color: #2a9d8f;
+}
